@@ -2,9 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBUNJOFAs5g3KEzYpqOedAUplp1V3LQwKE",
   authDomain: "netflix-ai-d81ab.firebaseapp.com",
@@ -16,13 +15,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-// Firebase Auth instance
+// ✅ Safe analytics
+isSupported().then((supported) => {
+  if (supported) getAnalytics(app);
+});
+
+// ✅ Auth MUST use app
 export const auth = getAuth(app);
 
-// Google Auth provider (for Google Sign-In)
+// Google Sign-In provider
 export const googleProvider = new GoogleAuthProvider();
 
-// Firestore database instance
+// Firestore
 export const db = getFirestore(app);

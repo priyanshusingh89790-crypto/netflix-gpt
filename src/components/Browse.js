@@ -1,8 +1,14 @@
+
+import Nowplayingmovie from "./Hooks/useNowplayingmovie";
+
+import MainContainer from "./maincontainer";
+import SecondaryContainer from "./secondarycontainer";
 const Browse = () => {
+   Nowplayingmovie();
     return (
-        <div>
-            <h1 className="text-3xl text-red absolute font-bold mb-4">Browse</h1>
-            <p>Watch movies and TV shows on Netflix.</p>
+        <div className="flex flex-col ">
+            <MainContainer/>
+            <SecondaryContainer/>
         </div>
     );
 };      

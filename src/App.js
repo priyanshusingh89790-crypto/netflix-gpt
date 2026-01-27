@@ -1,13 +1,17 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
-import Login from "./Login/Login";
+import Login from "./components/Login/Login";
 import Browse from "./components/Browse";
+import { Provider } from "react-redux";
+import store from "./utils/appstore";
 
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <Provider store={store}>
+        <Header />
+        <Outlet />
+      </Provider>
     </>
   );
 };

@@ -2,9 +2,7 @@
 import { useState } from "react";
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginForm";
-import { BACKGROUND_URL } from "../utils/constant";
-
-
+import { BACKGROUND_URL } from "../../utils/constant";
 
 export default function AuthPage() {
   const [showSignUp, setShowSignUp] = useState(true);
