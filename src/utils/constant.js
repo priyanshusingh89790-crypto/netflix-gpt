@@ -11,5 +11,7 @@ export const OPTION_API = {
 };
 
 export const NowPlayingMoviesAPI='https://api.themoviedb.org/3/movie/now_playing?page=1'
-
+export const PopularMoviesAPI='https://api.themoviedb.org/3/movie/popular?page=1'
+export const TopRatedMoviesAPI='https://api.themoviedb.org/3/movie/top_rated?page=1'
+export const UpcomingMoviesAPI='https://api.themoviedb.org/3/movie/upcoming?page=1'
 export const MOVIES_CARD_CDN_URL = "https://image.tmdb.org/t/p/w500"

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { play } from "../utils/svgs";
 const MainContainer = () => {
     const nowPlayingMovies = useSelector((store) => store.movies.nowPlayingMovies);
     if(!nowPlayingMovies){
@@ -13,8 +14,7 @@ const MainContainer = () => {
                 <h2 className="w-[50%] text-white text-[18px]">{movie.overview}</h2>
                 <div className="flex gap-5">
                 <button className="bg-white flex items-center gap-2  text-[20px] text-black px-4 py-2 hover:bg-gray-400  cursor-pointer rounded-md">
-                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21" /></svg>
-                      Play</button>
+                      {play}   Play</button>
                 <button className="bg-gray-500 flex items-center gap-2 text-[20px] hover:bg-gray-400 hover:text-black text-white px-4 py-2 cursor-pointer rounded-md"> ⓘ More info</button>
                 </div>
                 </div>
