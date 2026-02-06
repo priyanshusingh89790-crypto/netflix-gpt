@@ -2,28 +2,34 @@ import { MOVIES_CARD_CDN_URL } from "../utils/constant";
 import { play } from "../utils/svgs";
 
 const MovieRow = ({ title, movies }) => {
+  const getImage = (path) => {
+  return path
+    ? MOVIES_CARD_CDN_URL + path
+    : "/defaultmovieimg.png";
+};
+
+
   if (!movies?.length) return null;
 
   return (
-    <div className=" px-2 mb-12">
+    <div className="px-4 lg:mb-12">
       <h1 className="text-2xl font-bold text-white mb-4">{title}</h1>
 
       <div className="flex gap-5 overflow-x-scroll overflow-y-visible scrollbar-hide">
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="relative group ml-2 w-[242px] px-4 mb-10 pt-2 h-[340px] flex-shrink-0 transition-all duration-300 hover:scale-110 hover:z-50 cursor-pointer" >
+            className="relative group w-[242px] px-4 mb-10 pt-2 h-[340px] flex-shrink-0 transition-all duration-300 hover:scale-110 hover:z-50 cursor-pointer" >
             {/* Poster */}
             <img
               className="w-full h-[270px] object-cover rounded-lg"
-              src={MOVIES_CARD_CDN_URL + movie.poster_path}
-              alt={movie.title} />
+              src={getImage(movie.poster_path)} alt={movie.title}/>
 
             {/* Hover Overlay */}
             <div
               className="absolute mt-2  inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex flex-col justify-between">
               <img
-                src={MOVIES_CARD_CDN_URL + movie.backdrop_path}
+                src={getImage(movie.backdrop_path)}
                 alt={movie.title}
                 className="w-full h-[180px] object-cover rounded-lg mt-2" />
 

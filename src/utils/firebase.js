@@ -1,4 +1,3 @@
-// src/utils/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -13,19 +12,13 @@ const firebaseConfig = {
   appId: "1:227896718504:web:3826f1db20b6280317be9d"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Safe analytics
 isSupported().then((supported) => {
   if (supported) getAnalytics(app);
 });
 
-// ✅ Auth MUST use app
 export const auth = getAuth(app);
 
-// Google Sign-In provider
 export const googleProvider = new GoogleAuthProvider();
-
-// Firestore
 export const db = getFirestore(app);

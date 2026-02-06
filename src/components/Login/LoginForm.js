@@ -52,7 +52,7 @@ const LoginForm = ({ switchToSignUp }) => {
   };
 
   return (
-    <form className="flex pt-[90px] pb-[90px] flex-col gap-4 w-[440px] bg-black bg-opacity-80 p-10 rounded-xl text-white">
+    <form className="flex pt-[90px] pb-[90px] flex-col gap-4 w-[350px] md:w-[450px] lg:w-[440px] bg-black bg-opacity-80 lg:p-10 p-5 md:p-10 rounded-xl text-white">
       <h1 className="text-3xl font-bold mb-4">Sign In</h1>
 
       <input

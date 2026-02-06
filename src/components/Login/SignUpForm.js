@@ -73,7 +73,7 @@ const SignUpForm = ({ switchToSignIn }) => {
   };
 
   return (
-    <form className="flex flex-col gap-4 w-[450px] bg-black bg-opacity-80 p-10 pt-[90px] pb-[90px] rounded-xl text-white">
+    <form className="flex flex-col gap-4 w-[350px] md:w-[450px] lg:w-[450px] bg-black bg-opacity-80 lg:p-10 p-5 md:p-10 lg:pt-[90px] lg:pb-[90px] pt-[60px] pb-[60px] rounded-xl text-white">
       <h1 className="text-3xl font-bold mb-4">Sign Up</h1>
 
       <input
@@ -105,7 +105,7 @@ const SignUpForm = ({ switchToSignIn }) => {
         className="bg-red-600 h-12 rounded-lg mt-2"
         onClick={handleEmailSignUp}
       >
-        Sign Up with Email
+        Sign Up
       </button>
 
       {/* Google signup */}
@@ -114,7 +114,7 @@ const SignUpForm = ({ switchToSignIn }) => {
         className="hover:bg-white bg-white/20 hover:text-black h-12 rounded-lg mt-2"
         onClick={handleGoogleSignUp}
       >
-        Sign Up 
+        Sign Up with Google
       </button>
 
       <p className="text-sm mt-2">
