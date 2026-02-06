@@ -7,17 +7,19 @@ dotenv.config();
 
 const app = express();
 
+// ✅ Allow frontend (safe version for now)
 app.use(cors({
-  origin: "http://localhost:3000",
-  methods: ["GET","POST"],
+  origin: "*",
+  methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));
 
 app.use(express.json());
 
-
 app.use("/api/ai", aiRoutes);
 
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+// ✅ Use dynamic port (required for Render)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
