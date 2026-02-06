@@ -36,7 +36,7 @@ const MainContainer = () => {
           <h1 className="lg:text-4xl text-2xl pl-20 md:pl-[35%] lg:pl-0 text-center lg:text-left text-white font-bold">
             {movie.original_title}
           </h1>
-          <h2 className="w-[50%] sm:block hidden md:hidden lg:block text-white text-[18px]">{movie.overview}</h2>
+          <h2 className="w-[50%] hidden md:hidden lg:block  text-white text-[18px]">{movie.overview}</h2>
           <div className="flex gap-7 lg:gap-4 pl-16 md:pl-[33%] lg:pl-0 justify-center lg:justify-start">
             <button className="bg-white flex items-center gap-2 w-28 lg:text-[20px] text-[15px] text-black px-4 py-2 hover:bg-gray-400  cursor-pointer rounded-md">
               {play} Play
